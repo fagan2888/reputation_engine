@@ -1,7 +1,7 @@
 # Reputation Engine
 
 ## Overview
-This project is a functional prototype of a blockchain-based reputation engine allowing users to give and receive reputational reviews based on public key personas. These reputational reviews are based on two factors: a rating of the trustworthiness of the user and a weighting that user's judgment. For example, one user maybe completely trustworthy, but have poor judgment of how trustworthy others are. In that case, the user would receive a high rating, but a low weighting. The data generated as a side-effect of these reviews can be used to create a graph that can be traversed to arrive at a reputation.
+This project is a functional prototype of a blockchain-based reputation engine allowing users to give and receive reputational reviews based on public key personas. These reputational reviews are based on two factors: a rating of the trustworthiness of the user and a weighting that user's judgment. For example, one user may be completely trustworthy, but have poor judgment of how trustworthy others are. In that case, the user would receive a high rating, but a low weighting. The data generated as a side-effect of these reviews can be used to create a graph that can be traversed to arrive at a reputation.
 
 ## Setup
 
@@ -36,6 +36,10 @@ Something like this will appear:
 Grab the address that appears after ReputationFactory and use it to instantiate a new smartcontract alliased as "c":
 
     truffle(develop)> c = ReputationFactory.at('0x82d50ad3c1091866e258fd0f1a7cc9674609d254')
+
+Now the contract methods can be accessed. A reputation can be created with the following syntax:
+
+    truffle(develop)> c.createReputation(<receiver address>,<rating>,<weighting>)
 
 ## Notes
 A user could create as many personas as desired, but given the cost of building a reputation, each user would likely have only a single primary persona and reserve secondary personas for activities requiring elevated privacy.
